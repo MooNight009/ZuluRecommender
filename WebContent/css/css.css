@@ -1,0 +1,376 @@
+html, body, .grid-container {
+  height: 100%;
+  width: 85%;
+  margin: auto;
+  background-color: #D3D3D3;
+
+
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 120%;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container * { 
+ position: relative;
+}
+
+.grid-container *:after { 
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+.grid-container {
+  background-color: #DCDCDC;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .5fr 13fr;
+}
+
+.Content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.Recommendation {
+  grid-area: 1 / 1 / 2 / 2;
+  border: 2px solid #696969;
+  border-style: hidden solid hidden hidden;
+}
+
+.History {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.Last-entered-movie {
+  font-size: 20px;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.Current-List {
+	font-size: 20px;
+	overflow-y: scroll;
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+.Input {
+  	grid-area: 1 / 1 / 2 / 2;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-top: 5px;
+	padding-bottom: 8px;
+	background: #2B2625;
+}
+
+.MovieInput{
+  border: 4px solid #808080;
+  border-radius: 5px;
+  height: 43px;
+  padding-left: 5px;
+  width: 500px;
+  font-size: 20px;
+  margin-left: 10px;
+  
+}
+
+.SubmitButtons{
+  background-color: #2B2625;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*     THIS SWTICH PART              */
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 6px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*     THIS TAB PART        */
+.tab {
+  overflow: hidden;
+  background: #4d4d4d;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: white
+}
+
+.tab button{
+	background-color: #4d4d4d;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #34302F;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #3C3A39;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+
+
+
+
+
+/*        THIS SLIDE SHOW PART                  */
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  padding-top: 10px;
+}
+
+
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  position: relative;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  position: relative;
+  cursor: pointer;
+  /*position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;*/
+  height: 20px;
+  width: 22px;
+  margin: 0 2px;
+  color: white;
+  
+  display: inline-block;
+  
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: #bbb;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #717171;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.recommendedCard {
+  	background-color: #C0C0C0;
+  	display: block;
+  	margin-top: 4px;
+}
+
+.lastMovieCard {
+  	display: block;
+  	margin-top: 79px;
+  	margin-left: 10px;
+  	
+}
+
+table, th, td{
+  table-layout: auto;
+  width: auto;
+  border: none;
+  font-size: 20px;
+}
+
+p {
+	font-size: 20px;
+}
+
+.movieDetailedName{
+	display: flex;
+    align-items: center;
+	height: 90px;
+}
+
+.line {
+    order: 5;
+    width: 1px;
+    height: 2rem;
+    margin: 0px 0.5rem;
+}
